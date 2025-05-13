@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AWSProjectType>Lambda</AWSProjectType>
+    <!-- This property makes the build directory similar to a publish directory and helps the AWS .NET Lambda Mock Test Tool find project dependencies. -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <!-- Generate ready to run images during publishing to improve cold start time. -->
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <AssemblyName>acrdart-project-data-tableau-report-url-lambda</AssemblyName>
+    <RootNamespace>acrdart_project_data_tableau_report_url_lambda</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.Core" Version="2.5.1" />
+    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.4" />
+	 <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.7.1" />
+	 <PackageReference Include="AWSSDK.SecretsManager" Version="3.7.400.132" />
+	 <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.4" />
+	 <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Acr.Tableau.Security">
+      <HintPath>..\..\..\..\Acr.Tableau.Security.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
